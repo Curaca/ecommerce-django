@@ -1,0 +1,16 @@
+{% extends "principal/base.html" %}
+<!-- Heredamos la estructura base -->
+
+{% block content %}
+<h2>Formulario de contacto</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <!-- Protección obligatoria contra ataques -->
+
+    {{ form.as_p }}
+    <!-- Renderiza campos + errores automáticamente -->
+
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}

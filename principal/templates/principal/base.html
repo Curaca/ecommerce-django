@@ -1,0 +1,43 @@
+<!-- principal/templates/principal/base.html -->
+ <!-- {% block title %} y {% block content %} 
+  permiten que otras plantillas “hereden” 
+  y reemplacen contenido. -->
+  <nav>
+    <a href="{% url 'inicio' %}">Inicio</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'contacto' %}">Contacto</a>
+        <a href="{% url 'admin_panel' %}">Panel</a>
+        <a href="{% url 'logout' %}">Salir</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'registro' %}">Registro</a>
+    {% endif %}
+</nav>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <h1>Mi Sitio Django</h1>
+</header>
+
+<nav>
+    <a href="{% url 'contacto' %}">Contacto</a>
+</nav>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>Footer común</p>
+</footer>
+
+</body>
+</html>
