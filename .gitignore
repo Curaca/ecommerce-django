@@ -8,6 +8,3 @@ db.sqlite3
 # Entorno virtual
 venv/
 env/
-
-# VSCode
-.vscode/
