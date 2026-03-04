@@ -1,8 +1,18 @@
 <!-- principal/templates/principal/base.html -->
- <!-- {% block title %} y {% block content %} 
-  permiten que otras plantillas “hereden” 
-  y reemplacen contenido. -->
-  <nav>
+
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <h1>Mi Sitio Django</h1>
+</header>
+
+<nav>
     <a href="{% url 'inicio' %}">Inicio</a>
 
     {% if user.is_authenticated %}
@@ -15,28 +25,14 @@
     {% endif %}
 </nav>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Mi Sitio{% endblock %}</title>
-</head>
-<body>
-
-<header>
-    <h1>Mi Sitio Django</h1>
-</header>
-
-<nav>
-    <a href="{% url 'contacto' %}">Contacto</a>
-</nav>
+<hr>
 
 <main>
     {% block content %}{% endblock %}
 </main>
 
 <footer>
-    <p>Footer común</p>
+    <p>Ecommerce-django</p>
 </footer>
 
 </body>
